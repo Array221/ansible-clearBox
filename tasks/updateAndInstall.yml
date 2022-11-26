@@ -1,0 +1,13 @@
+---
+- name: Update all packages
+  ansible.builtin.apt:
+    update_cache: yes
+    upgrade: "safe"
+- name: Install nessesary packages
+  ansible.builtin.apt:
+    state: latest
+    name: "{{nessesaryPackages}}"
+- name: Install additional packages
+  ansible.builtin.apt:
+    state: latest
+    name: "{{additionalPackages}}"

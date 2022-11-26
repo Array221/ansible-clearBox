@@ -1,2 +1,8 @@
 ---
-# defaults file for clearBox
+additionalPackages:
+  - vim
+  - ranger
+  - pv
+  - less
+  - htop
+  - dnsutils

@@ -1,2 +1,3 @@
 ---
-# tasks file for clearBox
+- name: Update and install packages
+  include_tasks: updateAndInstall.yml
