@@ -1,3 +1,6 @@
 ---
+- name: Set default locale
+  include_tasks: setLocale.yml
+  when: desiredLocale != ""
 - name: Update and install packages
   include_tasks: updateAndInstall.yml
