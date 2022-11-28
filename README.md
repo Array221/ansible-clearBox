@@ -13,7 +13,7 @@ Role Variables
 
 ### Required
 
-None (yet)
+- `sudoUser` - Name of admin user that will be created
 
 ### Optional
 
@@ -35,6 +35,7 @@ Example Playbook
   roles:
     - role: clearBox
       vars:
+        - sudoUser: sudoAdmin
         - desiredLocale: pl_PL.UTF-8
         - desiredTimezone: Europe/Warsaw
       become: yes
