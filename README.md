@@ -17,6 +17,7 @@ Role Variables
 
 ### Optional
 
+- `sshKeysLink` - Link to SSH keys that will be added to sudo user *(default: None)*
 - `desiredLocale` - If not empty, will be set as system default locale *(default: "")*
 - `desiredTimezone` - If not empty, will be set as system timezone *(default: "")*
 - `additionalPackages` - list of additional packages that you want to be installed on the system *(default: vim, ranger, pv, less, htop, dnsutils)*
@@ -36,6 +37,7 @@ Example Playbook
     - role: clearBox
       vars:
         - sudoUser: sudoAdmin
+        - sshKeysLink: https://github.com/Array221.keys
         - desiredLocale: pl_PL.UTF-8
         - desiredTimezone: Europe/Warsaw
       become: yes
