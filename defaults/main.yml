@@ -6,3 +6,8 @@ additionalPackages:
   - less
   - htop
   - dnsutils
+sshPort: 22
+sshMaxAuthTries: 5
+sshGatewayPorts: false
+sshPermitTunnel: false
+sshBanner: ""

@@ -20,6 +20,11 @@ Role Variables
 - `sshKeysLink` - Link to SSH keys that will be added to sudo user *(default: None)*
 - `desiredLocale` - Default system locale that will be set in system *(default: None)*
 - `desiredTimezone` - Timezone that will be set in system *(default: None)*
+- `sshPort` - SSH port number that will be set *(default: 22)*
+- `sshMaxAuthTries` - Maximum number of login tries before disconnecting *(default: 5)*
+- `sshGatewayPorts` - Status of GatewayPorts option *(default: false)*
+- `sshPermitTunnel` - Status of PermitTunnel option *{default: false)*
+- `sshBanner` - SSH banner *(default: None)*
 - `additionalPackages` - list of additional packages that you want to be installed on the system *(default: vim, ranger, pv, less, htop, dnsutils)*
 
 Dependencies
@@ -40,6 +45,9 @@ Example Playbook
         - sshKeysLink: https://github.com/Array221.keys
         - desiredLocale: pl_PL.UTF-8
         - desiredTimezone: Europe/Warsaw
+        - sshPort: 122
+        - sshMaxAuthTries: 3
+        - sshBanner: Welcome to test server!
       become: yes
 ```
 
