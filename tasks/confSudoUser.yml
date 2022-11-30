@@ -13,6 +13,15 @@
     - sshKeysLink is defined
     - sshKeysLink | length > 0
     - sshKeysLink != None
+- name: "Enable silent login for user {{ sudoUser }}"
+  ansible.builtin.file:
+    path: "/home/{{ sudoUser }}/.hushlogin"
+    state: touch
+    owner: "{{ sudoUser }}"
+    group: "{{ sudoUser }}"
+    modification_time: preserve
+    access_time: preserve
+  when: enableSilentLogin
 - name: Lock root user password
   ansible.builtin.user:
     name: root
