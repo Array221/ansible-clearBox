@@ -1,7 +1,12 @@
 ClearBox
 ========
 
-Ansible role that automates basic configuration of Debian servers.
+Ansible role that automates basic configuration of Debian servers. This includes:
+- Updating all system packages
+- Setting up system default language
+- Setting up system timezone
+- Creating non-root user with sudo priviledges and given SSH keys
+- Hardening SSH configuration
 
 Requirements
 ------------
