@@ -33,6 +33,12 @@ Role Variables
 - `sshBanner` - SSH banner *(default: None)*
 - `additionalPackages` - list of additional packages that you want to be installed on the system *(default: vim, ranger, pv, less, htop, dnsutils)*
 
+Role Installation
+-----------------
+```shell
+ansible-galaxy role install array221.clearbox
+```
+
 Dependencies
 ------------
 
