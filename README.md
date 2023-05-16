@@ -45,7 +45,7 @@ Example Playbook
 ---
   hosts: all
   roles:
-    - role: clearBox
+    - role: array221.clearbox
       vars:
         - sudoUser: sudoAdmin
         - sshKeysLink: https://github.com/Array221.keys
