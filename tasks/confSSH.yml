@@ -4,3 +4,5 @@
     src: sshd_config.j2
     dest: /etc/ssh/sshd_config
     validate: /usr/sbin/sshd -tf %s
+  notify:
+    - Restart OpenSSH daemon
