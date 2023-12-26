@@ -3,10 +3,16 @@
   import_tasks: checkVariables.yml
 - name: Set default locale
   include_tasks: setLocale.yml
-  when: desiredLocale != ""
+  when:
+    - desiredLocale is defined
+    - desiredLocale | length > 0
+    - desiredLocale != None
 - name: Set system timezone
   include_tasks: setTimezone.yml
-  when: desiredTimezone != ""
+  when:
+    - desiredTimezone is defined
+    - desiredTimezone | length > 0
+    - desiredTimezone != None
 - name: Update and install packages
   include_tasks: updateAndInstall.yml
 - name: Configure sudo user

@@ -18,8 +18,8 @@ Role Variables
 ### Optional
 
 - `sshKeysLink` - Link to SSH keys that will be added to sudo user *(default: None)*
-- `desiredLocale` - If not empty, will be set as system default locale *(default: "")*
-- `desiredTimezone` - If not empty, will be set as system timezone *(default: "")*
+- `desiredLocale` - Default system locale that will be set in system *(default: None)*
+- `desiredTimezone` - Timezone that will be set in system *(default: None)*
 - `additionalPackages` - list of additional packages that you want to be installed on the system *(default: vim, ranger, pv, less, htop, dnsutils)*
 
 Dependencies
