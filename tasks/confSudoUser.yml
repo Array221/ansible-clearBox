@@ -13,6 +13,10 @@
     - sshKeysLink is defined
     - sshKeysLink | length > 0
     - sshKeysLink != None
+- name: Lock root user password
+  ansible.builtin.user:
+    name: root
+    password_lock: yes
 - name: "Enable passwordless sudo for {{ sudoUser }}"
   ansible.builtin.lineinfile:
     path: /etc/sudoers
