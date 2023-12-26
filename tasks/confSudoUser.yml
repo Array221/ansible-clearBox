@@ -5,3 +5,11 @@
     groups:
       - sudo
     shell: /bin/bash
+- name: "Add SSH keys for user {{ sudoUser }}"
+  ansible.posix.authorized_key:
+    user: "{{ sudoUser }}"
+    key: "{{ sshKeysLink }}"
+  when:
+    - sshKeysLink is defined
+    - sshKeysLink | length > 0
+    - sshKeysLink != None
