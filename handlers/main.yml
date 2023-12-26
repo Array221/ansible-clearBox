@@ -1,2 +1,5 @@
 ---
-# handlers file for clearBox
+- name: Restart OpenSSH daemon
+  ansible.builtin.service:
+    name: sshd
+    state: restarted
