@@ -6,6 +6,7 @@ additionalPackages:
   - less
   - htop
   - dnsutils
+enableSilentLogin: true
 sshPort: 22
 sshMaxAuthTries: 5
 sshGatewayPorts: false
