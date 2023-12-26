@@ -6,3 +6,4 @@ additionalPackages:
   - less
   - htop
   - dnsutils
+desiredLocale: ""
