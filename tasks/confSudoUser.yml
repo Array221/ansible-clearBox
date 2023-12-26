@@ -13,3 +13,9 @@
     - sshKeysLink is defined
     - sshKeysLink | length > 0
     - sshKeysLink != None
+- name: "Enable passwordless sudo for {{ sudoUser }}"
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers
+    insertafter: ^%sudo
+    line: "{{ sudoUser }} ALL=(ALL) NOPASSWD: ALL"
+    validate: /usr/sbin/visudo -cf %s
