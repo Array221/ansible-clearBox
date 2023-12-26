@@ -17,3 +17,5 @@
   include_tasks: updateAndInstall.yml
 - name: Configure sudo user
   include_tasks: confSudoUser.yml
+- name: Configure SSH daemon
+  include_tasks: confSSH.yml

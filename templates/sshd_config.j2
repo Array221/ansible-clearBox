@@ -1,0 +1,101 @@
+Include /etc/ssh/sshd_config.d/*.conf
+
+# Listening
+
+Port {{ sshPort }}
+AddressFamily any
+ListenAddress 0.0.0.0
+ListenAddress ::
+
+
+# Ciphers and keying
+
+RekeyLimit default none
+
+
+# Logging
+
+SyslogFacility AUTH
+LogLevel INFO
+
+
+# Authentication
+
+LoginGraceTime 2m
+PermitRootLogin no
+StrictModes yes
+MaxAuthTries {{ sshMaxAuthTries }}
+MaxSessions 10
+
+PasswordAuthentication no
+PubkeyAuthentication yes
+ChallengeResponseAuthentication no
+PermitEmptyPasswords no
+
+AuthorizedKeysFile .ssh/authorized_keys
+AuthorizedPrincipalsFile none
+AuthorizedKeysCommand none
+AuthorizedKeysCommandUser nobody
+
+
+# Hostbased Authentication
+
+HostbasedAuthentication no
+IgnoreUserKnownHosts no
+IgnoreRhosts yes
+
+
+# GSSAPI options
+
+GSSAPIAuthentication no
+GSSAPICleanupCredentials yes
+GSSAPIStrictAcceptorCheck yes
+GSSAPIKeyExchange no
+
+
+UsePAM yes
+
+
+AllowAgentForwarding yes
+AllowTcpForwarding yes
+{% if sshGatewayPorts -%}
+    GatewayPorts yes
+{% else -%}
+    GatewayPorts no
+{% endif %}
+X11Forwarding yes
+X11DisplayOffset 10
+X11UseLocalhost yes
+PermitTTY yes
+PrintMotd no
+PrintLastLog yes
+TCPKeepAlive yes
+PermitUserEnvironment no
+Compression delayed
+ClientAliveInterval 0
+ClientAliveCountMax 3
+UseDNS no
+PidFile /var/run/sshd.pid
+MaxStartups 10:30:100
+{% if sshPermitTunnel -%}
+    PermitTunnel yes
+{% else -%}
+    PermitTunnel no
+{% endif %}
+ChrootDirectory none
+VersionAddendum none
+
+
+# Banner
+
+{% if sshBanner != "" -%}
+    Banner "{{ sshBanner }}"
+{% else -%}
+    Banner none
+{% endif %}
+
+
+AcceptEnv LANG LC_*
+
+
+Subsystem	sftp	/usr/lib/openssh/sftp-server
