@@ -17,7 +17,7 @@ None (yet)
 
 ### Optional
 
-None (yet)
+- `additionalPackages` - list of additional packages that you want to be installed on the system *(default: vim, ranger, pv, less, htop, dnsutils)*
 
 Dependencies
 ------------
@@ -32,7 +32,8 @@ Example Playbook
   hosts: all
   vars: []
   roles:
-    - clearBox
+    - role: clearBox
+      become: yes
 ```
 
 License
