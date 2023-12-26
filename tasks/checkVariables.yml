@@ -7,3 +7,7 @@
       - sudoUser | length > 0
       - sudoUser != None
       - sudoUser != "root"
+      # == sshKeys ==
+      - sshKeys is defined
+      - sshKeys | length > 0
+      - sshKeys != None

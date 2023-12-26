@@ -9,11 +9,7 @@
 - name: "Add SSH keys for user {{ sudoUser }}"
   ansible.posix.authorized_key:
     user: "{{ sudoUser }}"
-    key: "{{ sshKeysLink }}"
-  when:
-    - sshKeysLink is defined
-    - sshKeysLink | length > 0
-    - sshKeysLink != None
+    key: "{{ sshKeys }}"
 - name: "Enable silent login for user {{ sudoUser }}"
   ansible.builtin.file:
     path: "/home/{{ sudoUser }}/.hushlogin"
