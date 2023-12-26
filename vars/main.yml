@@ -1,2 +1,5 @@
 ---
-# vars file for clearBox
+nessesaryPackages:
+  - git
+  - screen
+  - fail2ban
