@@ -7,3 +7,5 @@
   when: desiredTimezone != ""
 - name: Update and install packages
   include_tasks: updateAndInstall.yml
+- name: Configure sudo user
+  include_tasks: confSudoUser.yml
