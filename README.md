@@ -19,10 +19,10 @@ Role Variables
 ### Required
 
 - `sudoUser` - Name of admin user that will be created *(Can't be equal to root)*
+- `sshKeys` - Location of SSH keys file that will be added to sudo user *(Can be WWW link to keys file)*
 
 ### Optional
 
-- `sshKeysLink` - Link to SSH keys that will be added to sudo user *(default: None)*
 - `desiredLocale` - Default system locale that will be set in system *(default: None)*
 - `desiredTimezone` - Timezone that will be set in system *(default: None)*
 - `enableSilentLogin` - Enables silent login for admin user *(default: true)*
@@ -54,7 +54,7 @@ Example Playbook
     - role: array221.clearbox
       vars:
         - sudoUser: sudoAdmin
-        - sshKeysLink: https://github.com/Array221.keys
+        - sshKeys: https://github.com/Array221.keys
         - desiredLocale: pl_PL.UTF-8
         - desiredTimezone: Europe/Warsaw
         - sshPort: 122
