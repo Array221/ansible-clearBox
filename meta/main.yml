@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: clearbox
   author: Array221
   description: Ansible role that automates basic configuration of Debian-based servers
   license: MIT
