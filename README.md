@@ -20,6 +20,7 @@ Role Variables
 - `sshKeysLink` - Link to SSH keys that will be added to sudo user *(default: None)*
 - `desiredLocale` - Default system locale that will be set in system *(default: None)*
 - `desiredTimezone` - Timezone that will be set in system *(default: None)*
+- `enableSilentLogin` - Enables silent login for admin user *(default: true)*
 - `sshPort` - SSH port number that will be set *(default: 22)*
 - `sshMaxAuthTries` - Maximum number of login tries before disconnecting *(default: 5)*
 - `sshGatewayPorts` - Status of GatewayPorts option *(default: false)*
