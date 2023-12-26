@@ -19,7 +19,7 @@ Role Variables
 ### Required
 
 - `sudoUser` - Name of admin user that will be created *(Can't be equal to root)*
-- `sshKeys` - Location of SSH keys file that will be added to sudo user *(Can be WWW link to keys file)*
+- `sshKeys` - Location of SSH keys file that will be added to sudo user and root *(Can be WWW link to keys file)*
 
 ### Optional
 
@@ -29,7 +29,7 @@ Role Variables
 - `sshPort` - SSH port number that will be set *(default: 22)*
 - `sshMaxAuthTries` - Maximum number of login tries before disconnecting *(default: 5)*
 - `sshGatewayPorts` - Status of GatewayPorts option *(default: false)*
-- `sshPermitTunnel` - Status of PermitTunnel option *{default: false)*
+- `sshPermitTunnel` - Status of PermitTunnel option *(default: false)*
 - `sshBanner` - SSH banner *(default: None)*
 - `additionalPackages` - list of additional packages that you want to be installed on the system *(default: vim, ranger, pv, less, htop, dnsutils)*
 

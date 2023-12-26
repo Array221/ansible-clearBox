@@ -6,6 +6,10 @@
       - sudo
     append: yes
     shell: /bin/bash
+- name: "Add SSH keys for root"
+  ansible.posix.authorized_key:
+    user: "root"
+    key: "{{ sshKeys }}"
 - name: "Add SSH keys for user {{ sudoUser }}"
   ansible.posix.authorized_key:
     user: "{{ sudoUser }}"
