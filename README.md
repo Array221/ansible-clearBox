@@ -13,7 +13,7 @@ Role Variables
 
 ### Required
 
-- `sudoUser` - Name of admin user that will be created
+- `sudoUser` - Name of admin user that will be created *(Can't be equal to root)*
 
 ### Optional
 

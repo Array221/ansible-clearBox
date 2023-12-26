@@ -1,4 +1,6 @@
 ---
+- name: Check presence of mandatory variables
+  import_tasks: checkVariables.yml
 - name: Set default locale
   include_tasks: setLocale.yml
   when: desiredLocale != ""

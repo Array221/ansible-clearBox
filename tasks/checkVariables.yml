@@ -1,0 +1,9 @@
+---
+- name: Check presence of mandatory variables
+  assert:
+    that:
+      # == sudoUser ==
+      - sudoUser is defined
+      - sudoUser | length > 0
+      - sudoUser != None
+      - sudoUser != "root"
