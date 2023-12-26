@@ -1,7 +1,7 @@
 ---
-- name: Ensure "{{desiredLocale}}" locale is available
+- name: Ensure "{{ desiredLocale }}" locale is available
   community.general.locale_gen:
-    name: "{{desiredLocale}}"
+    name: "{{ desiredLocale }}"
     state: present
 - name: Get current locales configuration
   ansible.builtin.command: localectl status
@@ -9,10 +9,10 @@
   changed_when: false
 - name: Parse current LANG from configuration
   ansible.builtin.set_fact:
-    locale_lang: "{{locale_status.stdout | regex_search('LANG=([^\n]+)', '\\1') | first}}"
+    locale_lang: "{{ locale_status.stdout | regex_search('LANG=([^\n]+)', '\\1') | first }}"
 - name: Parse current LANGUAGE from configuration
   ansible.builtin.set_fact:
-    locale_language: "{{locale_status.stdout | regex_search('LANGUAGE=([^\n]+)', '\\1') | default([locale_lang], true) | first}}"
-- name: Set {{desiredLocale}} as default locale
-  ansible.builtin.command: localectl set-locale LANG={{desiredLocale}} LANGUAGE={{desiredLocale}}
+    locale_language: "{{ locale_status.stdout | regex_search('LANGUAGE=([^\n]+)', '\\1') | default([locale_lang], true) | first }}"
+- name: Set {{ desiredLocale }} as default locale
+  ansible.builtin.command: localectl set-locale LANG={{ desiredLocale }} LANGUAGE={{ desiredLocale }}
   changed_when: locale_lang != desiredLocale or locale_language != desiredLocale
