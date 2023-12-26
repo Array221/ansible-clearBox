@@ -1,0 +1,7 @@
+---
+- name: "Ensure that user {{ sudoUser }} exists, and assign it to sudoers group"
+  ansible.builtin.user:
+    name: "{{ sudoUser }}"
+    groups:
+      - sudo
+    shell: /bin/bash
